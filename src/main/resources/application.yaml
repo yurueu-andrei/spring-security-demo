@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+    password: postgres
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+  liquibase:
+    change-log: db/changelog/changelog.xml
+
+application:
+  security:
+    jwt:
+      secret-key: 5+h/1Tnoc0ob2E9sItBPO54xSf3Cx3M4hUYQ3qod/CYl5cotIiS3KOTDdLcAhBTq
+      access-token:
+        expiration: 86400000 # a day
+      refresh-token:
+        expiration: 604800000 # 7 days

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="4" author="andrei">
+        <comment>Inserting test-data in users table</comment>
+        <sql>
+            INSERT INTO users (name, surname, birth_date, username, password)
+            VALUES ('Мин', 'Экономики', '1980-01-01', 'mineconom', 'password123'),
+                   ('Отв', 'Заказчик', '1990-02-02', 'otvzakaz', 'password456'),
+                   ('Отв', 'Заказчик', '2000-03-03', 'otvzakaz2', 'password789'),
+                   ('Заказчик', 'Подпрограммы', '2000-03-03', 'zakazpp', 'password789'),
+                   ('Заказчик', 'Подпрограммы', '2000-03-03', 'zakazpp2', 'password789')
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
