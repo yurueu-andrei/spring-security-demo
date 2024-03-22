@@ -27,32 +27,27 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('READ_USERS')")
     public ResponseEntity<UserResponse> getById(@PathVariable("id") Long id) {
         return new ResponseEntity<>(userService.findById(id), HttpStatus.OK);
     }
 
     @GetMapping
-    @PreAuthorize("hasAuthority('READ_USERS')")
     public ResponseEntity<List<UserResponse>> getAllUsers(Pageable pageable) {
         return new ResponseEntity<>(userService.findAll(pageable), HttpStatus.OK);
     }
 
     @PostMapping
-    @PreAuthorize("hasAuthority('CREATE_USERS')")
     public ResponseEntity<UserResponse> createUser(@RequestBody UserRequest userRequest) {
         return new ResponseEntity<>(userService.save(userRequest), HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasAuthority('UPDATE_USERS')")
     public ResponseEntity<HttpStatus> update(@PathVariable("id") Long id, @RequestBody UserRequest userRequest) {
         userService.update(id, userRequest);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAuthority('DELETE_USERS')")
     public ResponseEntity<HttpStatus> deleteById(@PathVariable("id") Long id) {
         userService.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
