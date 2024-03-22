@@ -3,7 +3,6 @@ package com.example.demo.service;
 import com.example.demo.controller.request.ProgramRequest;
 import com.example.demo.controller.response.ProgramResponse;
 import com.example.demo.entity.Program;
-import com.example.demo.entity.User;
 import com.example.demo.exception.CustomException;
 import com.example.demo.mapper.ProgramMapper;
 import com.example.demo.repository.ProgramRepository;
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
