@@ -75,6 +75,7 @@ public class ProgramService {
         program.setParent(mappedProgram.getParent());
     }
 
+    // custom predicate
     public boolean isAllowedToRead(String username, Long id) {
         return programRepository.findById(id)
                 .orElseThrow(() -> new CustomException("There is no such program", HttpStatus.NOT_FOUND))
@@ -83,6 +84,7 @@ public class ProgramService {
 
     }
 
+    // custom predicate
     public boolean isAllowedToReadAll(String username) {
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new CustomException("There is no such user", HttpStatus.NOT_FOUND))
@@ -91,6 +93,7 @@ public class ProgramService {
 
     }
 
+    // custom predicate
     public boolean isAllowedToCreate(String username) {
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new CustomException("There is no such user", HttpStatus.NOT_FOUND))
@@ -99,6 +102,7 @@ public class ProgramService {
 
     }
 
+    // custom predicate
     public boolean isAllowedToUpdate(String username, Long id) {
         return programRepository.findById(id)
                 .orElseThrow(() -> new CustomException("There is no such program", HttpStatus.NOT_FOUND))
@@ -108,6 +112,7 @@ public class ProgramService {
 
     }
 
+    // custom predicate
     public boolean isAllowedToDelete(String username) {
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new CustomException("There is no such user", HttpStatus.NOT_FOUND))
