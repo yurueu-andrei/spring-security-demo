@@ -19,6 +19,9 @@ public interface ProgramMapper {
 
     @Named("mapParentIdToParent")
     default Program mapParentIdToParent(Long parentId) {
+        if (parentId == null) {
+            return null;
+        }
         Program program = new Program();
         program.setId(parentId);
         return program;
@@ -26,6 +29,9 @@ public interface ProgramMapper {
 
     @Named("mapParentToParentId")
     default Long mapParentToParentId(Program program) {
+        if (program == null) {
+            return null;
+        }
         return program.getId();
     }
 
