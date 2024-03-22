@@ -8,11 +8,11 @@
         <comment>Inserting test-data in users table</comment>
         <sql>
             INSERT INTO users (name, surname, birth_date, username, password)
-            VALUES ('Мин', 'Экономики', '1980-01-01', 'mineconom', 'password123'),
-                   ('Отв', 'Заказчик', '1990-02-02', 'otvzakaz', 'password456'),
-                   ('Отв', 'Заказчик', '2000-03-03', 'otvzakaz2', 'password789'),
-                   ('Заказчик', 'Подпрограммы', '2000-03-03', 'zakazpp', 'password789'),
-                   ('Заказчик', 'Подпрограммы', '2000-03-03', 'zakazpp2', 'password789')
+            VALUES ('Мин', 'Экономики', '1980-01-01', 'mineconom', '$2a$10$YHOZUTPJr.W9tJ1mtlyOouoGVSTs2uCbofrZCNALzKqfk7EvMzptq'),
+                   ('Отв', 'Заказчик', '1990-02-02', 'otvzakaz', '$2a$10$YHOZUTPJr.W9tJ1mtlyOouoGVSTs2uCbofrZCNALzKqfk7EvMzptq'),
+                   ('Отв', 'Заказчик', '2000-03-03', 'otvzakaz2', '$2a$10$YHOZUTPJr.W9tJ1mtlyOouoGVSTs2uCbofrZCNALzKqfk7EvMzptq'),
+                   ('Заказчик', 'Подпрограммы', '2000-03-03', 'zakazpp', '$2a$10$YHOZUTPJr.W9tJ1mtlyOouoGVSTs2uCbofrZCNALzKqfk7EvMzptq'),
+                   ('Заказчик', 'Подпрограммы', '2000-03-03', 'zakazpp2', '$2a$10$YHOZUTPJr.W9tJ1mtlyOouoGVSTs2uCbofrZCNALzKqfk7EvMzptq')
         </sql>
     </changeSet>
 
